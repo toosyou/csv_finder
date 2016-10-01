@@ -16,13 +16,12 @@ int main(int argc, char* argv[]){
     //first line
     int index_pre = 0;
     int index_next = 0;
-    in_csv >> buffer;
+    getline(in_csv, buffer);
     for(unsigned int i=0;i<buffer.size();++i){
         if(buffer[i] == ','){
             index_next = i;
             
             string tmp_str = buffer.substr(index_pre+1, index_next - index_pre-1);
-            cout << tmp_str <<endl;
             if(tmp_str == key_word)
                 break;
 
@@ -32,10 +31,9 @@ int main(int argc, char* argv[]){
     }
 
     //for all the lines
-    cout << index_key <<endl;
     index_pre = 0;
     index_next = 0;
-    while(in_csv >> buffer){
+    while(getline(in_csv, buffer)){
         int index_now = 0;
         string out_string;
         for(unsigned int i = 0;i<buffer.size();++i){
