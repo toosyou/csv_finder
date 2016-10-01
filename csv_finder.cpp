@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc, char* argv[]){
     if(argc != 3){
-        cout << "usage: ./tf csv_file key_word" <<endl;
+        cout << "usage: ./cf csv_file_address keyword_to_find" <<endl;
         return -1;
     }
 
